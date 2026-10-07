@@ -1,0 +1,39 @@
+# --- Core web framework ---
+fastapi
+uvicorn[standard]        # ASGI server (with websockets, watchfiles, etc.)
+
+# --- Data validation / settings (Pydantic) ---
+pydantic
+pydantic-settings        # for reading config from .env files
+
+# --- Database / SQL / PostgreSQL / SQLAlchemy ---
+sqlalchemy               # ORM
+asyncpg                  # async PostgreSQL driver (for async SQLAlchemy)
+psycopg2-binary           # sync PostgreSQL driver (useful for Alembic / simple scripts)
+alembic                  # database migrations
+
+# --- Authentication (JWT) ---
+python-jose[cryptography]  # create/verify JWT tokens
+pyjwt[crypto]                # create/verify JWT tokens (actively maintained)
+passlib[bcrypt]             # password hashing
+pwdlib[argon2]               # modern password hashing (actively maintained passlib alternative)
+python-multipart            # required for form/login data (OAuth2PasswordRequestForm)
+
+# --- HTTP requests (sync + async) ---
+requests                  # classic sync HTTP client
+httpx                     # async HTTP client (also works sync; great for testing FastAPI)
+aiohttp                   # alternative async HTTP client/server library
+
+# --- Async utilities ---
+# Note: asyncio itself is part of the Python standard library — no install needed.
+anyio                     # async concurrency primitives (FastAPI/Starlette use this under the hood)
+
+# --- Environment / config ---
+python-dotenv             # load .env files
+
+# --- Testing ---
+pytest
+pytest-asyncio
+
+# --- Weather API client ---
+openmeteo-requests         # Open-Meteo API client
